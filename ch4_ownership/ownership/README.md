@@ -164,6 +164,15 @@ Hence, memory wasn't moved. It's also flawed because moving memory blocks is cos
 be also magic tbh which violates the zero-overhead principle.
 
 
+### From the Book and Docs
+```
+fn drop(&mut self)
+```
+- Rust implicitly calls `drop` when the variable goes out of scope
+- You cannot explicitly call it. Attempting to do so will result to a compiler error.
+
+
+
 ### Very Useful Articles I found:
 
 **Investigating Memory Allocations in Rust:** https://ysantos.com/blog/malloc-in-rust
