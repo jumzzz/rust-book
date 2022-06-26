@@ -29,10 +29,10 @@ println!("stack_var6 = {:p}", &stack_var6);     // Different address to stack_va
 
 ```
 
-## Different usage between Stack and Heap Memory
+## Difference of usage between Stack and Heap Memory
 
-- If the memory block size of a variable, object can be predetermined at compile-time, it should be allocated on stack
-- If the memory block size of a variable cannot be determined at compile-time, it should be allocated on the heap
+- If the memory block size of a variable/object can be predetermined at compile-time, it should be allocated on stack
+- If the memory block size of a variable/object cannot be determined at compile-time, it should be allocated on the heap
 
 ## Copying/Moving Values of heap allocated variables
 
@@ -71,6 +71,6 @@ fn copy_values() {
 ```
 ## Comments
 - Not to sound I'm biased with Rust but this is quite a logical rule that allows you to strictly enforce ownership at compile time
-- If these ownership rules are violated, the compiler must detect it.
+- If these ownership rules are violated, the compiler **WILL** detect it.
 
 
