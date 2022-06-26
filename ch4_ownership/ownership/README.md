@@ -37,7 +37,7 @@ Rust takes a different approach, once it goes out of scope, Rust discards this a
       ltrace +x target/release/ownership
 
 
-```
+```shell
 ltrace -x "malloc+realloc+free" target/release/ownership
 
 malloc@libc.so.6(472)                                                                            = 0x5609fb5012a0
@@ -165,7 +165,7 @@ be also magic tbh which violates the zero-overhead principle.
 
 
 ### From the Book and Docs
-```
+```rust
 fn drop(&mut self)
 ```
 - Rust implicitly calls `drop` when the variable goes out of scope
