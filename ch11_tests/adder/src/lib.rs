@@ -1,4 +1,4 @@
-mod sample_struct {
+pub mod sample_struct {
     
     #[derive(Debug)]
     pub struct Rectangle {
@@ -32,7 +32,7 @@ mod sample_struct {
 
 }
 
-mod util_funcs {
+pub mod util_funcs {
     
     pub fn add_two(a: i32) -> i32 {
         a + 2
@@ -74,6 +74,9 @@ mod tests {
             width: 5,
             height: 1,
         };
+        
+        println!("larger (Rectangle) = {:?}", larger);
+        println!("smaller (Rectangle) = {:?}", smaller);
 
         assert!(larger.can_hold(&smaller));
     }
@@ -90,6 +93,11 @@ mod tests {
             height: 1,
         };
 
+        println!("larger (Rectangle) = {:?}", larger);
+        println!("smaller (Rectangle) = {:?}", smaller);
+
+        assert!(!smaller.can_hold(&larger));
+
     }
 
     #[test]
@@ -100,6 +108,8 @@ mod tests {
     #[test]
     fn greeting_contains_name() {
         let result = greeting("Gatching");
+        println!("result = {}", result);
+
         assert!(result.contains("Gatching"));
     }
 
@@ -109,6 +119,10 @@ mod tests {
         
         let other = "Kenchan";
         let encoded = format!("Hello {}", other);
+
+        println!("result = {}", result);
+        println!("other = {}", other);
+        println!("encoded = {}", encoded);
 
         assert_ne!(result, encoded);
 
