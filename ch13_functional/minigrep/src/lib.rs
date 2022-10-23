@@ -65,11 +65,11 @@ pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
 }
 
 pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
+    let query_lower = query.to_lowercase(); 
     contents
         .lines()
         .filter(|line| {
             let line_lower = line.to_lowercase();
-            let query_lower = query.to_lowercase();
             line_lower.contains(&query_lower)
         })
         .collect()
