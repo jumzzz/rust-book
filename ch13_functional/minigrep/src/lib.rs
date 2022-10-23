@@ -64,6 +64,12 @@ pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
         .collect()
 }
 
+/// Search case insensitive
+///
+/// # Example 
+/// ```
+/// search_case_insensitive()
+/// ```
 pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     let query_lower = query.to_lowercase(); 
     contents

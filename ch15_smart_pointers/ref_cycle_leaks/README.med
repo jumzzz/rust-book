@@ -1,0 +1,25 @@
+# Memory Leaks on Reference Cycle
+
+## Just a Recap on Stack Overflow
+
+Supposed you have a recursive function call
+
+
+```python
+
+int func_call(int i):
+
+    if i > 0:
+        i = i + 1
+        func_cal(i)
+    else:
+        return 0
+
+```
+
+What will happen inside the assembly is it will keep 
+on pushing values in the stack and there's no way stack 
+unwinding will happen.
+
+## How to avoid Reference Cycles 
+- Use different data structures (A Tree Perhaps)
