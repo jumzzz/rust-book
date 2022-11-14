@@ -40,6 +40,7 @@ fn handle_connection(mut stream: TcpStream) {
             "{status_line}\r\nContent-Length: {length}\r\n\r\n{contents}");
 
     stream.write_all(response.as_bytes()).unwrap();
+    stream.flush().unwrap();
 }
 
 
